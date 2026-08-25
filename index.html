@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Escape from Vaslui · The Ban · TodoAI Studio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --ink:#16151A; --body:#54524C; --muted:#A09E98; --faint:#C4C2BC;
+    --coral:#F2542D; --bg:#F4F4F2; --card:#FFFFFF; --border:#E5E4E0; --rule:#ECEBE7;
+  }
+  html,body{ background:var(--bg); }
+  body{
+    font-family:'Heebo',-apple-system,'Segoe UI',Arial,sans-serif;
+    color:var(--body); -webkit-print-color-adjust:exact; print-color-adjust:exact;
+    padding:40px 20px;
+  }
+  .page{
+    max-width:820px; margin:0 auto; background:var(--card);
+    border:1px solid var(--border); border-radius:4px;
+    padding:64px 64px 48px;
+  }
+
+  /* Header */
+  .logo{ display:flex; align-items:center; gap:11px; }
+  .logo img{ width:38px; height:38px; border-radius:9px; display:block; }
+  .logo .wm{ font-size:20px; font-weight:800; color:var(--ink); letter-spacing:-0.3px; }
+  .hr{ height:1px; background:var(--rule); border:0; margin:32px 0; }
+
+  .eyebrow{ font-size:12px; font-weight:700; letter-spacing:2px; color:var(--coral); }
+  h1{ font-size:30px; font-weight:800; color:var(--ink); line-height:1.2; margin:14px 0 12px; letter-spacing:-0.5px; }
+  .lead{ font-size:16px; color:var(--body); line-height:1.7; max-width:560px; }
+
+  /* Flow */
+  .flow{ display:flex; flex-wrap:wrap; gap:8px 6px; align-items:center; margin:28px 0 4px; }
+  .flow .s{ font-size:13.5px; color:var(--ink); font-weight:500; }
+  .flow .a{ color:var(--coral); font-weight:800; }
+
+  /* Offers */
+  .offers{ display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:8px; }
+  .offer{ padding:34px 30px; }
+  .offer.left{ border-left:1px solid var(--rule); }
+  .tag{ font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--coral); }
+  .offer h2{ font-size:21px; font-weight:800; color:var(--ink); margin:6px 0 4px; }
+  .offer .desc{ font-size:13.5px; color:var(--muted); line-height:1.6; min-height:42px; margin-bottom:22px; }
+
+  .pr{ display:flex; align-items:baseline; gap:8px; margin-bottom:4px; }
+  .pr .k{ font-size:13px; color:var(--muted); width:46px; }
+  .pr .v{ font-size:28px; font-weight:900; color:var(--ink); }
+  .pr .v.r{ font-size:20px; color:var(--coral); }
+  .pr .u{ font-size:13px; color:var(--muted); }
+  .minirule{ height:1px; background:var(--rule); margin:20px 0; }
+
+  ul{ list-style:none; }
+  li{ position:relative; padding:7px 22px 7px 0; font-size:14.5px; color:var(--ink); }
+  li::before{ content:'✓'; position:absolute; right:0; top:7px; color:var(--coral); font-weight:800; font-size:13px; }
+  li.plus{ color:var(--body); }
+  li.plus::before{ content:'+'; }
+
+  /* Costs */
+  .costs{ margin-top:34px; padding-top:28px; border-top:1px solid var(--rule); }
+  .costs .eyebrow{ display:block; margin-bottom:10px; }
+  .costs p{ font-size:14.5px; color:var(--body); line-height:1.8; }
+  .costs b{ color:var(--ink); font-weight:700; }
+  .costs .coral{ color:var(--coral); font-weight:800; }
+  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:22px; border:1px solid var(--rule); border-radius:4px; overflow:hidden; }
+  .cmp{ padding:20px 22px; }
+  .cmp:first-child{ border-left:1px solid var(--rule); background:#FBFBFA; }
+  .cmp-k{ font-size:12px; font-weight:700; letter-spacing:1px; color:var(--muted); margin-bottom:6px; }
+  .cmp-v{ font-size:22px; font-weight:900; color:var(--ink); }
+  .cmp-v.coral{ color:var(--coral); }
+  .cmp-v.strike{ color:var(--muted); text-decoration:line-through; text-decoration-color:var(--faint); }
+  .cmp-n{ font-size:12.5px; color:var(--muted); line-height:1.6; margin-top:8px; }
+
+  /* Signature */
+  .sig{ margin-top:40px; padding-top:26px; border-top:1px solid var(--rule); }
+  .sig .name{ font-size:15px; font-weight:700; color:var(--ink); }
+  .sig .title{ font-size:13.5px; color:var(--muted); padding-top:2px; }
+  .sig .links{ font-size:13px; color:var(--body); padding-top:14px; }
+  .sig .links a{ color:var(--coral); text-decoration:none; }
+
+  .foot{ margin-top:28px; font-size:11px; color:var(--faint); }
+
+
+  .band{ margin-top:34px; padding-top:28px; border-top:1px solid var(--rule); }
+  .band .eyebrow{ display:block; margin-bottom:12px; }
+  .band h3{ font-size:18px; font-weight:800; color:var(--ink); margin-bottom:10px; }
+  .band p{ font-size:14.5px; color:var(--body); line-height:1.8; }
+  .band b{ color:var(--ink); font-weight:700; }
+  .band .coral{ color:var(--coral); font-weight:800; }
+
+  table.sc{ width:100%; border-collapse:collapse; margin-top:14px; }
+  table.sc td{ padding:7px 0; border-top:1px solid var(--rule); vertical-align:top; font-size:13.5px; }
+  table.sc tr:first-child td{ border-top:0; }
+  td.t{ width:44px; color:var(--coral); font-weight:800; font-variant-numeric:tabular-nums; }
+  td.w{ width:112px; color:var(--muted); font-weight:700; font-size:12px; letter-spacing:.5px; }
+  td.l{ color:var(--ink); direction:ltr; text-align:left; }
+  td.l.act{ color:var(--muted); font-style:italic; }
+
+  .cast{ display:grid; grid-template-columns:1fr 1fr; gap:0 26px; margin-top:8px; }
+  .cast .c{ padding:11px 0; border-top:1px solid var(--rule); }
+  .cast .cn{ font-size:14.5px; font-weight:700; color:var(--ink); }
+  .cast .cd{ font-size:12.5px; color:var(--muted); line-height:1.6; padding-top:2px; }
+
+  .pay{ display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:20px; border:1px solid var(--rule); border-radius:4px; overflow:hidden; }
+  .pay .c{ padding:20px 22px; }
+  .pay .c:first-child{ border-left:1px solid var(--rule); background:#FBFBFA; }
+  .pay .k{ font-size:12px; font-weight:700; letter-spacing:1px; color:var(--muted); margin-bottom:6px; }
+  .pay .v{ font-size:26px; font-weight:900; color:var(--ink); }
+  .pay .v.coral{ color:var(--coral); }
+  .pay .n{ font-size:12.5px; color:var(--muted); line-height:1.6; margin-top:8px; }
+  .bank{ margin-top:18px; font-size:14px; color:var(--ink); line-height:2; }
+  .bank .k{ color:var(--muted); font-size:12.5px; }
+
+  /* Print button */
+  .printbar{ max-width:820px; margin:0 auto 18px; text-align:left; }
+  .printbtn{
+    font-family:inherit; background:var(--coral); color:#fff; border:0; border-radius:4px;
+    padding:11px 22px; font-size:14px; font-weight:700; cursor:pointer;
+  }
+  @media print{
+    body{ padding:0; } .page{ border:0; border-radius:0; }
+    .printbar{ display:none; }
+  }
+  @media(max-width:680px){
+    .page{ padding:40px 26px; } .offers{ grid-template-columns:1fr; }
+    .offer.left{ border-left:0; border-top:1px solid var(--rule); }
+    h1{ font-size:25px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="printbar"><button class="printbtn" onclick="window.print()">שמור כ-PDF / הדפס</button></div>
+
+  <div class="page">
+
+    <div class="eyebrow">הצעת מחיר · פיילוט 01</div>
+    <h1>Escape from Vaslui<br>The Ban</h1>
+    <p class="lead">ריל אנכי 9:16 לרשתות, באנגלית, באורך 60 עד 80 שניות. התסריט שלך, ערוך לפורמט של הרשתות: פותח על האיסור, מסתיים על הכנסייה הבוערת.</p>
+
+    <div class="flow">
+      <span class="s">הוק ב-3 שניות</span><span class="a">←</span>
+      <span class="s">רצף השאלות</span><span class="a">←</span>
+      <span class="s">הבר הופך לספרייה</span><span class="a">←</span>
+      <span class="s">הלינץ׳</span><span class="a">←</span>
+      <span class="s">השיר</span>
+    </div>
+
+    <hr class="hr">
+
+    <div class="eyebrow">התסריט</div>
+    <h3 style="font-size:18px;font-weight:800;color:var(--ink);margin:10px 0 4px;">הגרסה המלאה, לפי שניות</h3>
+    <p style="font-size:14px;color:var(--body);line-height:1.7;">
+      פותחים ישר על הקרדינל, בלי נאום הפתיחה של ראש העיר. לצופה שלא מכיר את וסלוי יש שלוש שניות
+      לפני שהוא גולל, ולכן הדבר הראשון על המסך הוא הכפר הכי שיכור באירופה והמשפט שאסרו בו אלכוהול.
+      זה האבסורד, וזה מה שמחזיק.<br>
+      הגרסה המלאה למטה היא 80 שניות. הריל הסופי ינחת בין <b>60 ל-80 שניות</b>, תלוי בקצב המשחק והעריכה,
+      והתמחור הסופי ייקבע לפי האורך בפועל.
+    </p>
+
+    <table class="sc">
+      <tr><td class="t">0:00</td><td class="w"></td><td class="l act">The whole village gathers around the square, crowding in toward the spot where the cardinal is about to speak. Every single one of them is drunk. The animals are drunk too, staggering through the crowd. On screen: ALCOHOL IS NOW BANNED IN THE DRUNKEST VILLAGE IN EUROPE</td></tr>
+      <tr><td class="t">0:04</td><td class="w"></td><td class="l act">The cardinal stands on the broken wooden stage facing all of them. Name card: CARDINAL KIDBANGER. A mother grabs her child and hides him behind her back</td></tr>
+      <tr><td class="t">0:06</td><td class="w">CARDINAL</td><td class="l">It has been decreed. All alcohol is banned. Throughout all of Vaslui.</td></tr>
+      <tr><td class="t">0:12</td><td class="w"></td><td class="l act">Stunned locals. Total disbelief</td></tr>
+      <tr><td class="t">0:14</td><td class="w">CARDINAL</td><td class="l">But it's not so bad! Water. Books. Hobbies. Showers, even. Right? Right?</td></tr>
+      <tr><td class="t">0:22</td><td class="w">VILLAGER</td><td class="l">What if it's for sanitation? <i>(holding up a Mona bottle, label visible)</i></td></tr>
+      <tr><td class="t">0:24</td><td class="w">CARDINAL</td><td class="l">No.</td></tr>
+      <tr><td class="t">0:25</td><td class="w">VILLAGER</td><td class="l">What if we mix it with water? Mostly water, right?</td></tr>
+      <tr><td class="t">0:30</td><td class="w">CARDINAL</td><td class="l">No.</td></tr>
+      <tr><td class="t">0:31</td><td class="w">VILLAGER</td><td class="l">What if it's fuel for the carriage?</td></tr>
+      <tr><td class="t">0:35</td><td class="w">CARDINAL</td><td class="l">No.</td></tr>
+      <tr><td class="t">0:36</td><td class="w">VILLAGER</td><td class="l">What if we share it with the children?</td></tr>
+      <tr><td class="t">0:40</td><td class="w">CARDINAL</td><td class="l">Hmm. Kids you say...</td></tr>
+      <tr><td class="t">0:42</td><td class="w">MAYOR</td><td class="l">Kidbanger!</td></tr>
+      <tr><td class="t">0:44</td><td class="w">CARDINAL</td><td class="l">No. No. Still no.</td></tr>
+      <tr><td class="t">0:46</td><td class="w"></td><td class="l act">The pig stands up out of the crowd</td></tr>
+      <tr><td class="t">0:47</td><td class="w">VALERIU</td><td class="l">What if only the pigs still drink it?</td></tr>
+      <tr><td class="t">0:51</td><td class="w">CARDINAL</td><td class="l">Ok. No more questions.</td></tr>
+      <tr><td class="t">0:53</td><td class="w">CARDINAL</td><td class="l">Oh, and one last tiny thing. The bar is now a library.</td></tr>
+      <tr><td class="t">0:59</td><td class="w"></td><td class="l act">Every face turns from disbelief to rage</td></tr>
+      <tr><td class="t">1:01</td><td class="w">CARDINAL</td><td class="l">That went well. They took it well.</td></tr>
+      <tr><td class="t">1:05</td><td class="w"></td><td class="l act">Vasilica holds a spike with the cardinal's head on it</td></tr>
+      <tr><td class="t">1:08</td><td class="w"></td><td class="l act">The whole village marching behind her. Pitchforks, shovels, torches</td></tr>
+      <tr><td class="t">1:12</td><td class="w"></td><td class="l act">The church goes up in flames. Bottles and axes flying. Full Vaslui</td></tr>
+      <tr><td class="t">1:16</td><td class="w"></td><td class="l act">Priests running, taking a beating on the way out</td></tr>
+      <tr><td class="t">1:18</td><td class="w"></td><td class="l act">Cut to the Escape from Vaslui song</td></tr>
+    </table>
+
+    <div class="band">
+      <span class="eyebrow">הדמויות הקבועות בריל הזה</span>
+      <div class="cast">
+      <div class="c"><div class="cn">Cardinal Kidbanger</div><div class="cd">דמות קבועה חדשה. נושא את הבשורה, מבועת מהשנייה הראשונה ומודע היטב לשם שלו</div></div>
+      <div class="c"><div class="cn">Vasilica</div><div class="cd">הזקנה. מובילה את הלינץ׳ עם הראש של הקרדינל על הכידון</div></div>
+      <div class="c"><div class="cn">Vera</div><div class="cd">התרנגולת. מסתובבת שיכורה בקהל לאורך הנאום</div></div>
+      <div class="c"><div class="cn">Valeriu</div><div class="cd">החזיר. קם מתוך הקהל ומקבל את הפאנץ׳ האחרון של הסצנה</div></div>
+      </div>
+    </div>
+
+    <div class="band">
+      <span class="eyebrow">מה נמסר</span>
+      <p>
+        ריל מוגמר באורך <b>60 עד 80 שניות</b>, פורמט אנכי <b>9:16</b>, באנגלית, מוכן להעלאה.
+        כולל אנימציה, קולות לכל הדמויות, מוזיקה, עיצוב סאונד וכתוביות מוטבעות.
+        גיליונות הדמות והקולות של הדמויות החדשות נשארים אצלך לשימוש בפרקים הבאים.
+        שני סבבי תיקונים כלולים.
+      </p>
+    </div>
+
+    <div class="band">
+      <span class="eyebrow">התמורה</span>
+      <p>
+        התעריף הוא <span class="coral">₪4,000 לדקת אנימציה מוגמרת</span>, וכולל הכל.
+        הריל הזה ינחת בין 60 ל-80 שניות, כלומר <span class="coral">בין ₪4,000 ל-₪5,300</span>.
+        המחיר הסופי ייקבע לפי האורך המוגמר בפועל, וייסגר מולך לפני המסירה.
+      </p>
+
+      <div class="pay">
+        <div class="c">
+          <div class="k">מקדמה, עכשיו</div>
+          <div class="v coral">₪2,000</div>
+          <div class="n">על החשבון. עם קבלת התשלום נכנסים לעבודה על הדמויות והקולות.</div>
+        </div>
+        <div class="c">
+          <div class="k">במסירה</div>
+          <div class="v">היתרה</div>
+          <div class="n">עם מסירת הריל המוגמר, לפי האורך הסופי, אחרי סבבי התיקונים.</div>
+        </div>
+      </div>
+
+      <div class="bank">
+        <span class="k">העברה בנקאית</span><br>
+        בנק 10 &nbsp;·&nbsp; סניף 998 &nbsp;·&nbsp; חשבון 24469418 &nbsp;·&nbsp; אביחי אלנקווה<br>
+        <span class="k">או ביט</span> &nbsp; 054-206-4301
+      </div>
+    </div>
+
+    <div class="sig">
+      <div class="name">אביחי אלנקווה</div>
+      <div class="title">Co-Founder &amp; AI Lead, TodoAI Studio</div>
+      <div class="links">
+        <a href="https://app.todowith.ai/">app.todowith.ai</a> &nbsp;·&nbsp;
+        <a href="https://wa.me/972542064301">וואטסאפ</a> &nbsp;·&nbsp;
+        <a href="https://instagram.com/todoai.il">Instagram</a>
+      </div>
+    </div>
+
+    <div class="foot">© 2026 TodoAI Studio · ההצעה בתוקף ל-14 יום</div>
+
+  </div>
+
+</body>
+</html>
